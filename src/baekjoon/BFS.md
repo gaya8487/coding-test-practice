@@ -17,6 +17,40 @@ static ArrayList<Integer>[] dataArray ; //인접 리스트
 static Boolean visited[]; //방문 기록 배열;
 
 public static void main(String[] args) throws IOException {
+
+	dataArray = new ArrayList[node+1];
+
+	//인접 리스트 초기화
+	for(int  i=1 ; i<=node ; i++){
+	    dataArray[i] = new ArrayList<>();
+	}
+
+	//인접 리스트에 그래프 데이터 저장하기
+	//에지 수 만큼 반복
+	for (int i = 1; i <=edge; i++) {
+            st = new StringTokenizer(bf.readLine());
+            int first = Integer.parseInt(st.nextToken());
+            int end = Integer.parseInt(st.nextToken());
+        
+            dataArray[first].add(end);
+            dataArray[end].add(first);
+	}
+	
+	for(int i=1 ; i<= node ; i++ ){
+	    Collections.sort(dataArray[i]);
+	};
+
+	visited = new Boolean[node+1];
+	Arrays.fill(visited,false);
+	dfs(start);
+
+	System.out.print("\n");
+
+	visited = new Boolean[node+1];
+	Arrays.fill(visited,false);
+	bfs(start);
+	
+	
 	bfs(start값);
 }
 
@@ -30,13 +64,13 @@ private static void bfs(int node) {
         int nowNode = queue.poll();
         System.out.print(nowNode + " ");
     
-        //연결 노드 중 방문하지 않았던 노드만 탐색
-        for(int i : dataArray[nowNode]){
-            if(!visited[i]){
-                visited[i] = true;
-                queue.add(i);
+          //연결 노드 중 방문하지 않았던 노드만 탐색
+            for(int i : dataArray[nowNode]){
+                if(!visited[i]){
+                    visited[i] = true;
+                    queue.add(i);
+                }
             }
-        } 
 	}
 }
 ```
