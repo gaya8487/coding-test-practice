@@ -1,8 +1,8 @@
-package Programmers;
+package Programmers.stack;
 
 import java.util.Stack;
 
-public class stack {
+public class course_30_12906 {
 
 	/** 스택 문제
 	 * /learn/courses/30/lessons/12906
@@ -15,6 +15,7 @@ public class stack {
 
 		stack.push(arr[0] );
 
+
 		for(int i=1 ; i<arr.length ; i++){
 
 			if(stack.peek()!=arr[i]  ){
@@ -23,6 +24,10 @@ public class stack {
 
 		}
 		int[] a = stack.stream().mapToInt(Integer::intValue).toArray();
+
+
+
+
 
 	}
 

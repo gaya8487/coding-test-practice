@@ -3,6 +3,7 @@ package baekjoon;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.StringTokenizer;
 
 public class baek_116559 {
@@ -21,6 +22,20 @@ public class baek_116559 {
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
+
+		ArrayList<Double> arrayList = new ArrayList<>();
+
+		int x=1;
+		int y =2;
+
+		Double d = (double)(x/y);
+
+
+
+		for (Double a : arrayList ){
+			System.out.println(a);
+		}
+
 
 		int dataNo = Integer.parseInt(st.nextToken());
 		int quizNo = Integer.parseInt(st.nextToken());
