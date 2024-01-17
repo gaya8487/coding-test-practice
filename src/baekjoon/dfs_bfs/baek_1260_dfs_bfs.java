@@ -1,4 +1,4 @@
-package baekjoon;
+package baekjoon.dfs_bfs;
 
 import java.io.IOException;
 import java.util.Scanner;
